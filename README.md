@@ -14,8 +14,9 @@ Zero dependencies, just need to clone and serve the files.
 ```sh
 # clone repo
 git clone git@github.com:JordanMajd/pixel-painter.git
-# host on localhost:8000
+# host w/ your fave webserver
 python -m http.server 
+# open up localhost:8000 and enjoy!
 ```
 
 
