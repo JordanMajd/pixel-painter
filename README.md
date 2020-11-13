@@ -32,6 +32,7 @@ python -m SimpleHTTPServer # python 2
 
 - Save, Load, Clear
 - Responsive design
+- Mobile controls
 
 ## Credits License
 
