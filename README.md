@@ -35,6 +35,7 @@ python -m SimpleHTTPServer # python 2
 - Clear
 - Zoom
 - Panning
+- Touch events in chrome mobile, scroll triggers before paint.
 
 
 ## Credits License
