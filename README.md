@@ -2,7 +2,7 @@
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 ![Built with love](https://img.shields.io/badge/built%20with-%E2%9D%A4-FF8080.svg)
 
-[pixel-painter](pixel-painter.jordanmajd.com); a simple pixel art paint tool built ontop of SVG.
+[Pixel Painter](pixel-painter.jordanmajd.com); a simple pixel art paint tool built ontop of SVG.
 
 I set out to build something completely different, while debugging my son caught me clicking on elements to change their color and wanted to try it out. From there it evolved into this.
 
@@ -22,7 +22,8 @@ Zero dependencies, just need to clone and serve the files.
 # clone repo
 git clone git@github.com:JordanMajd/pixel-painter.git
 # host w/ your fave webserver
-python -m http.server 
+python -m http.server  # python 3
+python -m SimpleHTTPServer # python 2
 # open up localhost:8000 and enjoy!
 ```
 
