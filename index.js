@@ -103,14 +103,18 @@ function dragPaint(root) {
   function startDrag(event) {
     paint(event.target);
     dragging = true;
-    event.preventDefault();
-    event.stopPropagation();
+    if(event.cancelable) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
   }
 
   function stopDrag(event) {
     dragging = false;
-    event.preventDefault();
-    event.stopPropagation();
+    if(event.cancelable) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
   }
 
   function drag(event) {
@@ -124,6 +128,8 @@ function dragPaint(root) {
           if(root.contains(node)) paint(node);
         }
       }
+    }
+    if(event.cancelable) {
       event.preventDefault();
       event.stopPropagation();
     }
