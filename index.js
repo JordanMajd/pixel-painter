@@ -121,6 +121,7 @@ function dragPaint(root) {
   root.addEventListener('touchmove', drag, false);
 }
 
+// setpointercapture
 
 function paint(node){
   const fill = activeColor;
