@@ -2,7 +2,7 @@
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 ![Built with love](https://img.shields.io/badge/built%20with-%E2%9D%A4-FF8080.svg)
 
-A simple pixel art paint tool built ontop of SVG.
+[pixel-painter](pixel-painter.jordanmajd.com); a simple pixel art paint tool built ontop of SVG.
 
 I set out to build something completely different, while debugging my son caught me clicking on elements to change their color and wanted to try it out. From there it evolved into this.
 
@@ -20,6 +20,8 @@ python -m http.server
 
 
 ## Preview
+
+See live: [pixel-painter.jordanmajd.com](pixel-painter.jordanmajd.com)
 
 ![Picture of Pixel Painter](/res/screenshot.png)
 
