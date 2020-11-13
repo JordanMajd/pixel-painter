@@ -5,7 +5,6 @@
 let activeColor = '#ffffff';
 const scale = 4;
 
-
 const canvas = document.getElementById('canvas');
 drawCanvas(canvas, scale);
 dragPaint(canvas);
@@ -31,17 +30,6 @@ const selectedColor = circle(vector(0.5, toolbarYPos++), scale)
 selectedColor.setAttribute('fill', activeColor);
 tools.appendChild(selectedColor);
 
-// const loadNode = circle(vector(0.5, toolbarYPos++), scale)
-// loadNode.setAttribute('fill', 'red');
-// tools.appendChild(loadNode);
-
-// const saveNode = circle(vector(0.5, toolbarYPos++), scale)
-// saveNode.setAttribute('fill', 'green');
-// tools.appendChild(saveNode);
-
-// const clearNode = circle(vector(0.5, toolbarYPos++), scale)
-// clearNode.setAttribute('fill', 'black');
-// tools.appendChild(clearNode);
 
 function drawCanvas(root, scale){
   const vb = root.viewBox.baseVal;
@@ -82,17 +70,6 @@ function elem(type, pos, scale) {
   node.setAttribute('stroke', '#f5f5f6');
   node.setAttribute('stroke-opacity', 1.0);
   return node;
-}
-
-
-function makeDraggable(root, elem) {
-  let p = root.createSVGPoint();
-  return root.addEventListener('mousemove', function(event){
-    p.x = event.clientX;
-    p.y = event.clientY;
-    const t = p.matrixTransform(root.getScreenCTM().inverse());
-    elem.setAttribute('transform', `translate(${t.x}, ${t.y})`);
-  });
 }
 
 
@@ -142,13 +119,6 @@ function dragPaint(root) {
   root.addEventListener('touchstart' , startDrag, false);
   root.addEventListener('mousemove', drag, false);
   root.addEventListener('touchmove', drag, false);
-}
-
-
-function clickPaint(root) {
-  return root.addEventListener('click', function(event){
-    paint(event.target);
-  });
 }
 
 
@@ -219,23 +189,4 @@ function setActiveColor(color){
   activeColor = color;
   selectedColor.setAttribute('fill', activeColor);
 }
-
-
-function save(root){
-  const wrapper = {
-    values: root.childNodes.values.map((e) => e.getAttribute('fill'))
-  };
-  return JSON.stringify(wrapper)
-}
-
-
-function load(root, json){
-  const wrapper = JSON.parse(json);
-  const children = root.childNodes.values();
-  if(children.length !== wrapper.length) return false;
-  for (let i = 0; i < wrapper.length; i++) {
-    children[i].setAttribute('fill', wrapper[i]);
-  }
-}
-
 }());
