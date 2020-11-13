@@ -20,7 +20,8 @@ html {
 body {
   height: 100%;
   color: var(--text-dark);
-  font-family: "Verdana", sans-serif;;
+  font-family: "Verdana", sans-serif;
+  overscroll-behavior: none;
 }
 
 h1 {
