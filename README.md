@@ -13,17 +13,13 @@ Zero dependencies, just need to clone and serve the files.
 
 ```sh
 # clone repo
-git clone git@github.com:JordanMajd/pixel_painter.git
+git clone git@github.com:JordanMajd/pixel-painter.git
 # host on localhost:8000
 python -m http.server 
 ```
 
 
-## Features
-
-- Paint stuff
-- TODO: Save stuff
-- TODO: Load stuff
+## Preview
 
 ![Picture of Pixel Painter](/res/screenshot.png)
 
