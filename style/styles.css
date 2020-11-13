@@ -24,6 +24,10 @@ body {
   overscroll-behavior: none;
 }
 
+html, body, section, svg {
+  overscroll-behavior: none;
+}
+
 h1 {
   margin-top: 6px;
   font-size: 1.2rem;
