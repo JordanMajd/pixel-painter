@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Pixel Painter</title>
+    <link href="/style/reset.css" rel="stylesheet" />
+    <link href="/style/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-highlight"></div>
+      <div class="header-container"><h1>Pixel Painter</h1></div>
+    </header>
+    <section class="container">
+      <svg id="display"
+        viewbox="0 0 120 100"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        version="1.1"
+      >
+        <svg width="16" height="100" transform="translate(0, 0)" id="palette" viewbox="0 0 16 100"></svg>
+        <svg width="100" height="100" transform="translate(16, 0)"" id="canvas" viewbox="0 0 100 100"></svg>
+        <svg width="4" height="100" transform="translate(116, 0)"" id="tools" viewbox="0 0 4 100"></svg>
+      </svg>
+    </section>
+    <footer class="text-center">
+      <span>
+        Copyright &copy;2020 <a href="https://jordanmajd.com/">Jordan Majd</a>. Source available on <a href="https://github.com/JordanMajd/pixel_painter">github</a>.
+      </span>
+  </footer>
+    <script src="/index.js"></script>
+  </body>
+</html>

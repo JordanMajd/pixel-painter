@@ -1,0 +1,85 @@
+:root {
+  --primary: #c5cae9;
+  --primary-light: #f8fdff;
+  --primary-dark: #9499b7;
+  --text-dark: #424242;
+  --grey: #e1e2e1;
+  --grey-light: #f5f5f6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  color: var(--text-dark);
+  background-color: var(--grey-light);
+  font-family: "Verdana", sans-serif;;
+}
+
+h1 {
+  margin-top: 6px;
+  font-size: 1.2rem;
+}
+
+a {
+  color: var(--text-dark);
+}
+
+.header {
+  height: 50px;
+  background-color: var(--primary);
+}
+
+.header-highlight {
+  height: 10px;
+  width: 100%;
+  background-color: var(--primary-dark);
+}
+
+.header-container {
+  width: 60%;
+  padding-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container {
+  width: 50%;
+  padding-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media only screen and (max-width: 992px) {
+  .container {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+  }
+}
+
+footer {
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  max-width: 90%;
+  text-align: center;
+  font-size: 0.75rem;  
+  line-height: 1rem; 
+}
+
+#display {
+  margin-left: auto;
+  margin-right: auto;
+}
