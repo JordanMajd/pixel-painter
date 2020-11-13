@@ -28,11 +28,14 @@ python -m SimpleHTTPServer # python 2
 ```
 
 
-## TODO
+## TODO?
 
-- Save, Load, Clear
-- Responsive design
-- Mobile controls
+- Save (json + localstorage)
+- Load (json + localstorage)
+- Clear
+- Zoom
+- Panning
+
 
 ## Credits License
 
