@@ -24,6 +24,7 @@ body {
   overscroll-behavior: none;
 }
 
+/* TODO cleanup */
 html, body, section, svg {
   overscroll-behavior: none;
   touch-action: none;
