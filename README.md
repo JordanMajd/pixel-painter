@@ -35,7 +35,7 @@ python -m SimpleHTTPServer # python 2
 - Clear
 - Zoom
 - Panning
-- Touch events in chrome mobile, scroll triggers before paint.
+- Touch events in chrome mobile - drag doesn't always trigger?
 
 
 ## Credits License
