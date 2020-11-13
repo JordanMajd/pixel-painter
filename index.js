@@ -120,8 +120,8 @@ function dragPaint(root) {
       if(touches) {
         for (let i = 0; i < touches.length; i++) {
           const touch = touches[i];
-          const element = document.elementFromPoint(touch.clientX, touch.clientY);
-          paint(element);
+          const node = document.elementFromPoint(touch.clientX, touch.clientY);
+          if(root.contains(node)) paint(node);
         }
       }
       event.preventDefault();
@@ -129,13 +129,13 @@ function dragPaint(root) {
     }
   }
 
-  root.addEventListener('mouseleave', stopDrag);
-  root.addEventListener('mouseup', stopDrag);
-  root.addEventListener('touchend', stopDrag);
-  root.addEventListener('mousedown' , startDrag);
-  root.addEventListener('touchstart' , startDrag);
-  root.addEventListener('mousemove', drag);
-  root.addEventListener('touchmove', drag);
+  root.addEventListener('mouseleave', stopDrag, false);
+  root.addEventListener('mouseup', stopDrag, false);
+  root.addEventListener('touchend', stopDrag, false);
+  root.addEventListener('mousedown' , startDrag, false);
+  root.addEventListener('touchstart' , startDrag, false);
+  root.addEventListener('mousemove', drag, false);
+  root.addEventListener('touchmove', drag, false);
 }
 
 
