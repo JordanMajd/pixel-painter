@@ -75,11 +75,9 @@ function elem(type, pos, scale) {
 
 function dragPaint(root) {
 
-  let dragging = false;
-
   function startDrag(event) {
     paint(event.target);
-    dragging = true;
+    root.setPointerCapture(event.pointerId);
     if(event.cancelable) {
       event.preventDefault();
       event.stopPropagation();
@@ -87,7 +85,7 @@ function dragPaint(root) {
   }
 
   function stopDrag(event) {
-    dragging = false;
+    root.releasePointerCapture(event.pointerId);
     if(event.cancelable) {
       event.preventDefault();
       event.stopPropagation();
@@ -95,16 +93,9 @@ function dragPaint(root) {
   }
 
   function drag(event) {
-    if(dragging){
-      if(event.target) paint(event.target);
-      const touches = event.targetTouches;
-      if(touches) {
-        for (let i = 0; i < touches.length; i++) {
-          const touch = touches[i];
-          const node = document.elementFromPoint(touch.clientX, touch.clientY);
-          if(root.contains(node)) paint(node);
-        }
-      }
+    if(root.hasPointerCapture(event.pointerId)){
+      const node = document.elementFromPoint(event.clientX, event.clientY);
+      if(root.contains(node)) paint(node);
     }
     if(event.cancelable) {
       event.preventDefault();
@@ -112,13 +103,9 @@ function dragPaint(root) {
     }
   }
 
-  root.addEventListener('mouseleave', stopDrag, false);
-  root.addEventListener('mouseup', stopDrag, false);
-  root.addEventListener('touchend', stopDrag, false);
-  root.addEventListener('mousedown' , startDrag, false);
-  root.addEventListener('touchstart' , startDrag, false);
-  root.addEventListener('mousemove', drag, false);
-  root.addEventListener('touchmove', drag, false);
+  root.addEventListener('pointerup', stopDrag, false);
+  root.addEventListener('pointerdown' , startDrag, false);
+  root.addEventListener('pointermove', drag, false);
 }
 
 // setpointercapture
