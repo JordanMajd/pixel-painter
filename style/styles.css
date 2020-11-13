@@ -13,12 +13,12 @@
 
 html {
   height: 100%;
+  background-color: var(--grey-light);
 }
 
 body {
   height: 100%;
   color: var(--text-dark);
-  background-color: var(--grey-light);
   font-family: "Verdana", sans-serif;;
 }
 

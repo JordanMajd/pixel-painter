@@ -100,32 +100,42 @@ function dragPaint(root) {
 
   let dragging = false;
 
-  root.addEventListener('mouseleave', function(event){
-    dragging = false;
-    event.preventDefault();
-    event.stopPropagation();
-  });
-
-  root.addEventListener('mousedown', function(event){
-    dragging = true;
+  function startDrag(event) {
     paint(event.target);
+    dragging = true;
     event.preventDefault();
     event.stopPropagation();
-  });
+  }
 
-  root.addEventListener('mouseup', function(event){
+  function stopDrag(event) {
     dragging = false;
     event.preventDefault();
     event.stopPropagation();
-  });
+  }
 
-  root.addEventListener('mouseover', function(event){
+  function drag(event) {
     if(dragging){
-      paint(event.target);
+      if(event.target) paint(event.target);
+      const touches = event.targetTouches;
+      if(touches) {
+        for (let i = 0; i < touches.length; i++) {
+          const touch = touches[i];
+          const element = document.elementFromPoint(touch.clientX, touch.clientY);
+          paint(element);
+        }
+      }
+      event.preventDefault();
+      event.stopPropagation();
     }
-    event.preventDefault();
-    event.stopPropagation();
-  });
+  }
+
+  root.addEventListener('mouseleave', stopDrag);
+  root.addEventListener('mouseup', stopDrag);
+  root.addEventListener('touchend', stopDrag);
+  root.addEventListener('mousedown' , startDrag);
+  root.addEventListener('touchstart' , startDrag);
+  root.addEventListener('mousemove', drag);
+  root.addEventListener('touchmove', drag);
 }
 
 
