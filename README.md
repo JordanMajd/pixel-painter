@@ -7,6 +7,13 @@
 I set out to build something completely different, while debugging my son caught me clicking on elements to change their color and wanted to try it out. From there it evolved into this.
 
 
+## Preview
+
+See live: [pixel-painter.jordanmajd.com](pixel-painter.jordanmajd.com)
+
+![Picture of Pixel Painter](/res/screenshot.png)
+
+
 ## Up and Running
 
 Zero dependencies, just need to clone and serve the files.
@@ -20,12 +27,10 @@ python -m http.server
 ```
 
 
-## Preview
+## TODO
 
-See live: [pixel-painter.jordanmajd.com](pixel-painter.jordanmajd.com)
-
-![Picture of Pixel Painter](/res/screenshot.png)
-
+- Save, Load, Clear
+- Responsive design
 
 ## Credits License
 
