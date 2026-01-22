@@ -9,7 +9,7 @@ I set out to build something completely different, while debugging my son caught
 
 ## Preview
 
-See live: [pixel-painter.jordanmajd.com](pixel-painter.jordanmajd.com)
+See live: [pixel-painter.jordanmajd.com](http://pixel-painter.jordanmajd.com/)
 
 ![Picture of Pixel Painter](/res/screenshot.png)
 
